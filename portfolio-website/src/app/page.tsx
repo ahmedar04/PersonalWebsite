@@ -112,6 +112,23 @@ export default function Home() {
       tech: 'Python, Next.js, React, FastAPI, GPT-4, NLP, Firebase, Vercel'
     },
     {
+      title: 'Co-founder & CTO',
+      company: 'CreditPro',
+      period: 'May 2024 – October 2024',
+      stats: [
+        { value: '$1600+', label: 'Revenue' },
+        { value: '153', label: 'Risk Assessments' },
+        { value: '94%', label: 'Prediction Accuracy' },
+        { value: '97.5%', label: 'Cost Reduction' }
+      ],
+      description: [
+        "Built CreditPro, a SaaS platform that democratizes credit ratings for small businesses unable to afford expensive ratings from agencies like Moody's and S&P, serving 20+ SMBs with accurate credit assessments.",
+        'Engineered and trained ML models on historical financial data and existing credit ratings to predict creditworthiness for small businesses at 2% of the cost',
+        'Developed AI-powered advisory tools that analyze financial statements and provide actionable recommendations to help businesses improve their credit worthiness.'
+      ],
+      tech: 'Python, React, Flask, PostgreSQL, AWS, Docker, Redis, ML/AI'
+    },
+    {
       title: 'Lab Research Data Scientist',
       company: 'PAK Lab',
       period: 'October 2024 – Present',
@@ -151,43 +168,26 @@ export default function Home() {
       title: 'GradeWise',
       description: 'AI-powered educational platform for personalized exam preparation',
       highlights: [
-        'Next.js & FastAPI architecture',
+        '1000+ Monthly Active Users',
         'Custom PyTorch ML models',
-        'GPT-4 integration for grading',
-        'Real-time analytics dashboard'
+        'GPT-4 integration for grading'
       ],
       tech: ['Next.js', 'TypeScript', 'FastAPI', 'GPT-4', 'Firebase'],
       link: 'https://gradewise.ai',
-      github: 'https://github.com/ahmedar04/gradewise',
       image: '/gradewise.png'
     },
     {
-      title: 'SkinKare',
-      description: 'Multi-model ensemble system for classifying skin lesions from medical images',
+      title: 'CreditPro',
+      description: 'SaaS platform for automated credit risk assessment and portfolio management',
       highlights: [
-        '93% accuracy on 20,000+ images',
-        'AWS S3, EC2 & Hadoop pipeline',
-        'Google Cloud TPU optimization',
-        'AWS SageMaker deployment'
+        'ML-powered risk scoring algorithm',
+        'Real-time credit monitoring dashboard',
+        'API integration with financial institutions',
+        'Custom reporting and analytics suite'
       ],
-      tech: ['Python', 'Django', 'TensorFlow', 'AWS'],
-      period: 'June 2023 – October 2023',
-      github: 'https://github.com/ahmedar04/skinkare',
-      image: '/api/placeholder/800/600'
-    },
-    {
-      title: 'Tahlil',
-      description: 'Quantitative Analytics API for the Tadawul stock exchange',
-      highlights: [
-        'Sub-100ms response times',
-        '1000+ requests handling',
-        '99.9% uptime achievement',
-        '70% reduced API latency'
-      ],
-      tech: ['Python', 'Django REST Framework', 'PostgreSQL', 'Heroku'],
-      period: 'May 2022 – August 2022',
-      github: 'https://github.com/ahmedar04/tahlil',
-      image: '/api/placeholder/800/600'
+      tech: ['Python', 'React', 'Flask', 'PostgreSQL', 'AWS'],
+      period: 'January 2023 – May 2023',
+      image: '/creditpro.png'
     }
   ];
 
