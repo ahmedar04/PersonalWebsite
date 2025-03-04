@@ -19,22 +19,6 @@ export default function Home() {
     { id: 'contact', label: 'Contact' }
   ];
 
-  // Scroll to section function
-  const scrollToSection = (sectionId) => {
-    setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      // Add a small offset to account for the fixed header
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - headerOffset;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {
