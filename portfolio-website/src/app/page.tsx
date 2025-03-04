@@ -105,7 +105,7 @@ export default function Home() {
         { value: '45%', label: 'Retention Rate' }
       ],
       description: [
-        'Architected and scaled GradeWise, an AI-powered educational platform, to 1000+ active users, generating $800 MRR, leveraging Next.js, TypeScript, and FastAPI to deliver personalized exam preparation.',
+        'Architected and scaled GradeWise, an AI-powered educational platform, to 1000+ active users, leveraging Next.js, TypeScript, and FastAPI to deliver personalized exam preparation.',
         'Engineered a production ML system combining custom PyTorch models with GPT-4, processing 50K+ student responses with 98% accuracy.',
         'Designed a real-time analytics engine handling 10K+ daily events using Firebase, featuring custom ML pipelines that improved student performance by 45%.'
       ],
