@@ -9,14 +9,83 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
   const [scrollY, setScrollY] = useState(0);
 
+  // Navigation links
+  const navLinks = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'portfolio', label: 'Portfolio' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'expertise', label: 'Expertise' },
+    { id: 'contact', label: 'Contact' }
+  ];
+
+  // Scroll to section function
+  const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Add a small offset to account for the fixed header
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
+      
+      // Get all sections and their positions
+      const sections = navLinks.map(link => {
+        const element = document.getElementById(link.id);
+        if (!element) return { id: link.id, top: 0, bottom: 0 };
+        
+        const rect = element.getBoundingClientRect();
+        return {
+          id: link.id,
+          top: rect.top + window.scrollY,
+          bottom: rect.bottom + window.scrollY,
+          height: rect.height
+        };
+      });
+      
+      // Determine which section is currently in view
+      const viewportHeight = window.innerHeight;
+      const scrollPosition = window.scrollY + viewportHeight / 3; // Adjust viewport position for better UX
+      
+      // Find the current active section
+      for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        const nextSection = sections[i + 1];
+        
+        // Check if we're at the top of the page
+        if (window.scrollY < 100 && section.id === 'home') {
+          setActiveSection('home');
+          break;
+        }
+        
+        // Check if we're in this section
+        const sectionTop = section.top;
+        const sectionBottom = nextSection ? nextSection.top : document.body.scrollHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          setActiveSection(section.id);
+          break;
+        }
+      }
     };
     
     window.addEventListener('scroll', handleScroll);
+    // Call once on mount to set initial active section
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [navLinks]);
 
   // Animation variants
   const fadeIn = {
@@ -38,16 +107,6 @@ export default function Home() {
     hidden: { opacity: 0, scale: 0.9 },
     visible: { opacity: 1, scale: 1 }
   };
-
-  // Navigation links
-  const navLinks = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'portfolio', label: 'Portfolio' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'expertise', label: 'Expertise' },
-    { id: 'contact', label: 'Contact' }
-  ];
 
   // Experience data
   const portfolio = [
@@ -185,7 +244,7 @@ export default function Home() {
       </Head>
 
       {/* Navigation */}
-      <nav className={`fixed w-full z-10 transition-all duration-300 ${scrollY > 50 ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div className="hidden md:flex md:space-x-8">
@@ -314,13 +373,10 @@ export default function Home() {
                 </p>
                 <div className="mt-6 prose prose-indigo prose-lg text-gray-500">
                   <p>
-                    I&apos;m an entrepreneur and AI engineer passionate about creating scalable solutions that solve real-world problems. With a background in computer science from UMass Amherst, I&apos;ve built and led teams to develop cutting-edge applications in education, healthcare, and financial analysis.
+                    I&apos;m a CS student at UMass Amherst and founder of GradeWise, an AI-powered educational platform serving 1000+ active users. I specialize in building AI solutions that deliver tangible results across education, healthcare, and finance.
                   </p>
                   <p>
-                    My journey began with a simple question: how can AI transform education? This led to the founding of GradeWise, an AI-powered platform that&apos;s now helping thousands of students improve their academic performance.
-                  </p>
-                  <p>
-                    As both a technical founder and visionary leader, I bridge the gap between innovative technology and practical business applications, always focused on creating value through thoughtful implementation of AI and machine learning systems.
+                    My technical expertise in ML/AI systems combined with business acumen allows me to transform complex technologies into user-centered applications that solve real problems. I&apos;m passionate about leveraging technology to create meaningful impact.
                   </p>
                 </div>
                 <div className="mt-8">
@@ -397,7 +453,7 @@ export default function Home() {
             <div className="text-center">
               <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Portfolio</h2>
               <p className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                My Entrepreneurial Journey
+                My Journey
               </p>
               <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
                 Building innovative solutions and leading technological initiatives
