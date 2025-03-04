@@ -586,16 +586,6 @@ export default function Home() {
                             Visit Site <FaArrowRight className="ml-2" />
                           </a>
                         )}
-                        {project.github && (
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-                          >
-                            <FaGithub className="mr-2" /> View Code
-                          </a>
-                        )}
                       </div>
                     </div>
                   </div>
