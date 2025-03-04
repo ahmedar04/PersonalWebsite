@@ -43,23 +43,23 @@ export default function Home() {
   const navLinks = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'ventures', label: 'Ventures' },
+    { id: 'portfolio', label: 'Portfolio' },
     { id: 'projects', label: 'Projects' },
     { id: 'expertise', label: 'Expertise' },
     { id: 'contact', label: 'Contact' }
   ];
 
   // Experience data
-  const ventures = [
+  const portfolio = [
     {
       title: 'Founder & CEO',
       company: 'GradeWise',
       period: 'August 2024 – Present',
       stats: [
         { value: '1,000+', label: 'Active Users' },
-        { value: '$800', label: 'MRR' },
+        { value: '50K+', label: 'Gradings' },
         { value: '98%', label: 'ML Accuracy' },
-        { value: '45%', label: 'Student Improvement' }
+        { value: '45%', label: 'Retention Rate' }
       ],
       description: [
         'Architected and scaled GradeWise, an AI-powered educational platform, to 1000+ active users, generating $800 MRR, leveraging Next.js, TypeScript, and FastAPI to deliver personalized exam preparation.',
@@ -116,7 +116,7 @@ export default function Home() {
       tech: ['Next.js', 'TypeScript', 'FastAPI', 'GPT-4', 'Firebase'],
       link: 'https://gradewise.ai',
       github: 'https://github.com/ahmedar04/gradewise',
-      image: '/api/placeholder/800/600'
+      image: '/gradewise.png'
     },
     {
       title: 'SkinKare',
@@ -179,7 +179,7 @@ export default function Home() {
   return (
     <div className="bg-white min-h-screen">
       <Head>
-        <title>Ahmed Abdul Rahman | Founder & AI Developer</title>
+        <title>Ahmed Abdul Rahman | Founder & Developer</title>
         <meta name="description" content="Ahmed Abdul Rahman - Founder, AI Developer, and Computer Science Student" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -188,9 +188,6 @@ export default function Home() {
       <nav className={`fixed w-full z-10 transition-all duration-300 ${scrollY > 50 ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            <div className="flex items-center">
-              <span className={`text-2xl font-bold ${scrollY > 50 ? 'text-indigo-600' : 'text-white'}`}>AR</span>
-            </div>
             <div className="hidden md:flex md:space-x-8">
               {navLinks.map((link) => (
                 <a
@@ -233,14 +230,6 @@ export default function Home() {
           id="home" 
           className="relative h-screen flex items-center justify-center bg-gradient-to-r from-indigo-600 to-purple-600 overflow-hidden"
         >
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-black opacity-50"></div>
-            <img
-              src="/api/placeholder/1920/1080"
-              alt="placeholder"
-              className="h-full w-full object-cover"
-            />
-          </div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
             <motion.h1
@@ -260,7 +249,7 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="mt-6 text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto"
             >
-              Founder, AI Developer & Computer Science Student
+              Founder & Software Engineer
             </motion.p>
             
             <motion.div
@@ -271,10 +260,10 @@ export default function Home() {
               className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
             >
               <a
-                href="#ventures"
+                href="#portfolio"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-gray-100 md:py-4 md:text-lg md:px-10"
               >
-                See My Ventures
+                See My Portfolio
               </a>
               <a
                 href="#contact"
@@ -304,235 +293,8 @@ export default function Home() {
           </div>
         </section>
         
-        {/* Testimonials Section */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Testimonials</h2>
-              <p className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                What People Say
-              </p>
-            </div>
-            
-            <div className="mt-16">
-              <div className="grid gap-8 md:grid-cols-3">
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeIn}
-                  transition={{ duration: 0.5 }}
-                  className="bg-gray-50 rounded-xl shadow-md p-8"
-                >
-                  <div className="flex items-center mb-6">
-                    <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center">
-                      <svg className="h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="text-lg font-bold text-gray-900">Dr. Sarah Chen</h4>
-                      <p className="text-gray-600">Head of PAK Lab</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 italic">
-                  &quot;Ahmed&apos;s ML pipeline revolutionized our research capabilities. His technical expertise combined with strategic vision made him an invaluable asset to our team.&quot;
-                  </p>
-                </motion.div>
-                
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeIn}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="bg-gray-50 rounded-xl shadow-md p-8"
-                >
-                  <div className="flex items-center mb-6">
-                    <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center">
-                      <svg className="h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="text-lg font-bold text-gray-900">Prof. Michael Rodriguez</h4>
-                      <p className="text-gray-600">Computer Science Department</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 italic">
-                  &quot;One of our brightest students. Ahmed consistently demonstrates exceptional problem-solving abilities and entrepreneurial spirit that sets him apart.&quot;
-                  </p>
-                </motion.div>
-                
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeIn}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="bg-gray-50 rounded-xl shadow-md p-8"
-                >
-                  <div className="flex items-center mb-6">
-                    <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center">
-                      <svg className="h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="text-lg font-bold text-gray-900">Mira Patel</h4>
-                      <p className="text-gray-600">GradeWise User</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 italic">
-                  &quot;GradeWise transformed my study habits and improved my scores by over 30%. The personalized feedback and AI-driven insights are game-changing for students.&quot;
-                  </p>
-                </motion.div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="py-24 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Contact</h2>
-              <p className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                Let&apos;s Connect
-              </p>
-              <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                Whether you&apos;re interested in collaboration, investment opportunities, or just want to chat about tech, I&apos;d love to hear from you.
-              </p>
-            </div>
-
-            <div className="mt-16">
-              <div className="bg-white overflow-hidden shadow rounded-lg">
-                <div className="lg:grid lg:grid-cols-2">
-                  <div className="py-16 px-6 sm:px-12 lg:py-24 lg:px-12 bg-indigo-700">
-                    <div className="max-w-lg mx-auto">
-                      <h3 className="text-2xl font-extrabold text-white">Get in touch</h3>
-                      <p className="mt-4 text-lg text-indigo-100">
-                        I&apos;m always looking for new opportunities and connections. Reach out and let&apos;s discuss how we can work together.
-                      </p>
-                      
-                      <div className="mt-12 space-y-6">
-                        <div className="flex items-center">
-                          <div className="flex-shrink-0">
-                            <FaEnvelope className="h-6 w-6 text-indigo-200" />
-                          </div>
-                          <div className="ml-3 text-lg text-white">
-                            <p>ahmedarwork@gmail.com</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center">
-                          <div className="flex-shrink-0">
-                            <FaLinkedin className="h-6 w-6 text-indigo-200" />
-                          </div>
-                          <div className="ml-3 text-lg text-white">
-                            <a href="https://linkedin.com/in/ahmed-ar" target="_blank" rel="noopener noreferrer" className="underline">
-                              linkedin.com/in/ahmed-ar
-                            </a>
-                          </div>
-                        </div>
-                        <div className="flex items-center">
-                          <div className="flex-shrink-0">
-                            <FaGithub className="h-6 w-6 text-indigo-200" />
-                          </div>
-                          <div className="ml-3 text-lg text-white">
-                            <a href="https://github.com/ahmedar04" target="_blank" rel="noopener noreferrer" className="underline">
-                              github.com/ahmedar04
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="mt-12">
-                        <h4 className="text-lg font-medium text-white">Looking for</h4>
-                        <div className="mt-4 grid grid-cols-2 gap-4">
-                          {["Technical Co-founders", "Investors", "Research Partners", "Speaking Opportunities"].map((item, index) => (
-                            <div key={index} className="bg-indigo-800 rounded-md px-4 py-2 text-indigo-100 text-center text-sm">
-                              {item}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="py-16 px-6 sm:px-12 lg:py-24 lg:px-12">
-                    <div className="max-w-lg mx-auto">
-                      <h3 className="text-2xl font-extrabold text-gray-900">Send me a message</h3>
-                      <form action="#" method="POST" className="mt-8 grid grid-cols-1 gap-y-6">
-                        <div>
-                          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-                          <div className="mt-1">
-                            <input
-                              type="text"
-                              name="name"
-                              id="name"
-                              autoComplete="name"
-                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                              placeholder="Your name"
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                          <div className="mt-1">
-                            <input
-                              id="email"
-                              name="email"
-                              type="email"
-                              autoComplete="email"
-                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                              placeholder="you@example.com"
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <label htmlFor="purpose" className="block text-sm font-medium text-gray-700">Purpose</label>
-                          <div className="mt-1">
-                            <select
-                              id="purpose"
-                              name="purpose"
-                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                            >
-                              <option>Job opportunity</option>
-                              <option>Collaboration</option>
-                              <option>Investment</option>
-                              <option>Speaking engagement</option>
-                              <option>Other</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div>
-                          <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-                          <div className="mt-1">
-                            <textarea
-                              id="message"
-                              name="message"
-                              rows={4}
-                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                              placeholder="Your message"
-                            ></textarea>
-                          </div>
-                        </div>
-                        <div>
-                          <button
-                            type="submit"
-                            className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                          >
-                            Send Message
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
         {/* About Section */}
         <section id="about" className="py-24 bg-white">
@@ -563,10 +325,10 @@ export default function Home() {
                 </div>
                 <div className="mt-8">
                   <a
-                    href="#ventures"
+                    href="#portfolio"
                     className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
                   >
-                    My Ventures <FaArrowRight className="ml-2" />
+                    My Portfolio <FaArrowRight className="ml-2" />
                   </a>
                 </div>
               </motion.div>
@@ -629,11 +391,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Ventures Section */}
-        <section id="ventures" className="py-24 bg-gray-50">
+        {/* Portfolio Section */}
+        <section id="portfolio" className="py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Ventures</h2>
+              <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Portfolio</h2>
               <p className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
                 My Entrepreneurial Journey
               </p>
@@ -643,7 +405,7 @@ export default function Home() {
             </div>
 
             <div className="mt-16 space-y-16">
-              {ventures.map((venture, index) => (
+              {portfolio.map((portfolio, index) => (
                 <motion.div
                   key={index}
                   initial="hidden"
@@ -655,12 +417,12 @@ export default function Home() {
                 >
                   <div className="lg:grid lg:grid-cols-3 lg:gap-8">
                     <div className="lg:col-span-1">
-                      <h3 className="text-2xl font-bold text-gray-900">{venture.company}</h3>
-                      <p className="mt-1 text-lg font-medium text-indigo-600">{venture.title}</p>
-                      <p className="mt-1 text-sm text-gray-500">{venture.period}</p>
+                      <h3 className="text-2xl font-bold text-gray-900">{portfolio.company}</h3>
+                      <p className="mt-1 text-lg font-medium text-indigo-600">{portfolio.title}</p>
+                      <p className="mt-1 text-sm text-gray-500">{portfolio.period}</p>
                       
                       <div className="mt-6 grid grid-cols-2 gap-4">
-                        {venture.stats.map((stat, statIndex) => (
+                        {portfolio.stats.map((stat, statIndex) => (
                           <div key={statIndex} className="bg-white overflow-hidden shadow rounded-lg">
                             <div className="px-4 py-5 sm:p-6">
                               <dt className="text-sm font-medium text-gray-500 truncate">{stat.label}</dt>
@@ -675,7 +437,7 @@ export default function Home() {
                       <div className="bg-white overflow-hidden shadow rounded-lg">
                         <div className="px-4 py-5 sm:p-6">
                           <div className="space-y-4">
-                            {venture.description.map((desc, i) => (
+                            {portfolio.description.map((desc, i) => (
                               <p key={i} className="text-gray-600">
                                 {desc}
                               </p>
@@ -685,7 +447,7 @@ export default function Home() {
                           <div className="mt-6">
                             <h4 className="text-sm font-medium text-gray-500">Technologies</h4>
                             <div className="mt-2 flex flex-wrap gap-2">
-                              {venture.tech.split(', ').map((tech, i) => (
+                              {portfolio.tech.split(', ').map((tech, i) => (
                                 <span
                                   key={i}
                                   className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-indigo-100 text-indigo-800"
@@ -881,6 +643,137 @@ export default function Home() {
             </div>
             </div>
             </section>
+
+            {/* Contact Section */}
+        <section id="contact" className="py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Contact</h2>
+              <p className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Let&apos;s Connect
+              </p>
+              <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                Whether you&apos;re interested in collaboration, investment opportunities, or just want to chat about tech, I&apos;d love to hear from you.
+              </p>
+            </div>
+
+            <div className="mt-16">
+              <div className="bg-white overflow-hidden shadow rounded-lg">
+                <div className="lg:grid lg:grid-cols-2">
+                  <div className="py-16 px-6 sm:px-12 lg:py-24 lg:px-12 bg-indigo-700">
+                    <div className="max-w-lg mx-auto">
+                      <h3 className="text-2xl font-extrabold text-white">Get in touch</h3>
+                      <p className="mt-4 text-lg text-indigo-100">
+                        I&apos;m always looking for new opportunities and connections. Reach out and let&apos;s discuss how we can work together.
+                      </p>
+                      
+                      <div className="mt-12 space-y-6">
+                        <div className="flex items-center">
+                          <div className="flex-shrink-0">
+                            <FaEnvelope className="h-6 w-6 text-indigo-200" />
+                          </div>
+                          <div className="ml-3 text-lg text-white">
+                            <p>ahmedarwork@gmail.com</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center">
+                          <div className="flex-shrink-0">
+                            <FaLinkedin className="h-6 w-6 text-indigo-200" />
+                          </div>
+                          <div className="ml-3 text-lg text-white">
+                            <a href="https://linkedin.com/in/ahmed-ar" target="_blank" rel="noopener noreferrer" className="underline">
+                              linkedin.com/in/ahmed-ar
+                            </a>
+                          </div>
+                        </div>
+                        <div className="flex items-center">
+                          <div className="flex-shrink-0">
+                            <FaGithub className="h-6 w-6 text-indigo-200" />
+                          </div>
+                          <div className="ml-3 text-lg text-white">
+                            <a href="https://github.com/ahmedar04" target="_blank" rel="noopener noreferrer" className="underline">
+                              github.com/ahmedar04
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="py-16 px-6 sm:px-12 lg:py-24 lg:px-12">
+                    <div className="max-w-lg mx-auto">
+                      <h3 className="text-2xl font-extrabold text-gray-900">Send me a message</h3>
+                      <form action="#" method="POST" className="mt-8 grid grid-cols-1 gap-y-6">
+                        <div>
+                          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                          <div className="mt-1">
+                            <input
+                              type="text"
+                              name="name"
+                              id="name"
+                              autoComplete="name"
+                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                              placeholder="Your name"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                          <div className="mt-1">
+                            <input
+                              id="email"
+                              name="email"
+                              type="email"
+                              autoComplete="email"
+                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                              placeholder="you@example.com"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <label htmlFor="purpose" className="block text-sm font-medium text-gray-700">Purpose</label>
+                          <div className="mt-1">
+                            <select
+                              id="purpose"
+                              name="purpose"
+                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                            >
+                              <option>Job opportunity</option>
+                              <option>Collaboration</option>
+                              <option>Investment</option>
+                              <option>Speaking engagement</option>
+                              <option>Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div>
+                          <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                          <div className="mt-1">
+                            <textarea
+                              id="message"
+                              name="message"
+                              rows={4}
+                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                              placeholder="Your message"
+                            ></textarea>
+                          </div>
+                        </div>
+                        <div>
+                          <button
+                            type="submit"
+                            className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          >
+                            Send Message
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
             </main>
 
