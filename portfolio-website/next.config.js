@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-};
-
-module.exports = nextConfig;
+    output: 'standalone',
+    // This helps with Vercel deployments
+    swcMinify: true,
+  };
+  
+  module.exports = nextConfig;
